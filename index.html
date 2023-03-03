@@ -188,21 +188,53 @@
 
     <div class="container">
         <h1>Join the Best Gym Of World Now!</h1>
-        <form action="index/submitted.html" target="_blank">
+        <form onsubmit="myfunc(event)" action="index/submitted.html" target="blank">
             <div class="form-group">
-                <input type="text" name="" placeholder="Enter your Name">
-                <input type="text" name="" placeholder="Enter your E-mail">
-                <input type="text" name="" placeholder="Enter your Gender">
-                <input type="text" name="" placeholder="Enter your Age">
-                <input type="text" name="" placeholder="Enter your Locality">
-                <input type="text" name="" placeholder="Enter your Contact-Number">
-                <input type="text" name="" placeholder="Enter your BMI">
+                <input type="text" id="full_name" name="" placeholder="Enter your Name" required>
+                <input type="email" id="email" name="" placeholder="Enter your E-mail" required>
+                <input type="text" id="gender" name="" placeholder="Enter your Gender" required>
+                <input type="date" id="age" name="" placeholder="Enter your D.O.B" required>
+
                 <button class="btn">Submit Your Form</button>
+
             </div>
         </form>
 
     </div>
 
 </body>
+
+<script type="text/javascript">
+    /*var storedItem = localStorage.getItem("storedItem");
+
+    function save() {
+        var Item = document.getElementById("input").value;
+        localStorage.setItem("storedItem", Item);
+        document.getElementById("saved text").innerHTML = Item + " SAVED";
+    }
+    function get() {
+        localStorage.getItem("storedItem");
+        document.getElementById("openedText").innerHTML = storedItem + "SAVED";
+    }*/
+    function myfunc(event) {
+
+
+        var full_name = document.getElementById("full_name").value;
+        var email = document.getElementById("email").value;
+        var gender = document.getElementById("gender").value;
+        var age = document.getElementById("age").value;
+
+
+
+
+        localStorage.setItem('name', full_name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('gender', gender);
+        localStorage.setItem('age', age);
+
+
+    }
+
+</script>
 
 </html>
